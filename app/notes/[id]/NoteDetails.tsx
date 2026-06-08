@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
 import Loading from "../loading";
 import ErrorRoute from "./error";
+import NoteDetailsClientPage from "../NoteDetails.client";
 
 export default function NoteDetails() {
   const { id } = useParams<{ id: string }>();
@@ -19,5 +20,5 @@ export default function NoteDetails() {
   });
   if (isLoading) return <Loading />;
   if (error) if (error || !note) return <ErrorRoute error={error} />;
-  return note && <NoteDetailsClient note={note} />;
+  return note && <NoteDetailsClientPage note={note} />;
 }
