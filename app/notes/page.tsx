@@ -9,6 +9,7 @@ import NoteForm from "@/components/NoteForm/NoteForm";
 import NoteList from "@/components/NoteList/NoteList";
 import { useDebouncedCallback } from "use-debounce";
 import Pagination from "@/components/Pagination/Pagination";
+import NotesClient from "./Notes.client";
 
 function App() {
   const [query, setQuery] = useState("");
@@ -64,7 +65,7 @@ function App() {
             <NoteForm closeModal={closeModal} />
           </Modal>
         )}
-        {notes.length > 0 && <NoteList notes={notes} />}
+        <NotesClient notes={notes} />
       </div>
     </>
   );

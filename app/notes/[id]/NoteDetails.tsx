@@ -3,9 +3,9 @@ import NoteDetailsClient from "@/components/NoteDetailsClient/NoteDetailsClient"
 import { fetchNoteById } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
-import Loading from "../loading";
+import Loading from "../../loading";
 import ErrorRoute from "./error";
-import NoteDetailsClientPage from "../NoteDetails.client";
+import NoteDetailsClientPage from "./NoteDetails.client";
 
 export default function NoteDetails() {
   const { id } = useParams<{ id: string }>();
