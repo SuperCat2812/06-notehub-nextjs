@@ -19,6 +19,6 @@ export default function NoteDetails() {
     refetchOnMount: false,
   });
   if (isLoading) return <Loading />;
-  if (error) if (error || !note) return <ErrorRoute error={error} />;
+  if (error) return <ErrorRoute error={error} />;
   return note && <NoteDetailsClientPage note={note} />;
 }
